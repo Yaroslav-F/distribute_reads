@@ -20,7 +20,7 @@ module DistributeReads
         # https://github.com/brianmario/mysql2/issues/948
         # https://github.com/taskrabbit/makara/issues/227
         # https://medium.com/@derekfan/rails-aurora-read-replica-failover-with-rails-3478a0afec20
-        ActiveRecord::Base.clear_active_connections!
+        ActiveRecord::Base.clear_all_connections!
 
         # TODO ensure same connection is used to test lag and execute queries
         max_lag = options[:max_lag]
